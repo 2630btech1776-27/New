@@ -1,0 +1,105 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.gridContainer {
+    height: 90vh;
+    border: 1px solid black;
+    display: grid;
+   /* grid-template-columns: 100px 200px 300px 200px; */
+  /* grid-template-columns: 100px 100px 100px; */
+  grid-template-columns: repeat(3, 1fr) 2fr;
+    grid-template-rows: 100px 100px 100px;
+   /*  row-gap: 10px; */
+   /* column-gap: 10px; */
+    gap: 20px;
+}
+
+.griditems {
+    background-color: pink;
+    color: black;
+    border: 1px solid black;
+    padding: 50px;
+}
+
+.griditems:nth-child(1) {
+   /* grid-column-start: 1; */
+  /*  grid-column-end: -1; */
+ /* grid-row-start: 2; */
+/* grid-row-end: 3; */
+grid-column: 1/-2;
+grid-row: 2/3;
+}
+
+.layout {
+   height: 100pvh;
+   display: grid;
+   grid-template-columns: 1fr 3fr 1fr;
+   grid-template-rows: 50px 1fr 50px;
+   grid-template-areas: 
+   "header header herder"
+   "aside main nav"
+   "footer footer footer ";
+  
+}
+
+header {
+    grid-area: header;
+    background-color: pink;
+    font-weight: bold;
+    text-align: center;
+}
+ nav {
+     grid-area: header;
+    background-color: rgb(111, 22, 235);
+    font-weight: bold;
+    text-align: center;
+ }  
+ main {
+     grid-area: header;
+    background-color: rgb(241, 13, 120);
+    font-weight: bold;
+    text-align: center;
+ }
+ footer {
+     grid-area: header;
+    background-color: rgb(10, 161, 237);
+    font-weight: bold;
+    text-align: center;
+ }
+
+ /* 57px Mobile devices */
+ /* 577- 760px tablet devices */
+ /* 760-920px small devices */
+ /* 920px-1200px large devices */
+
+    @media (max-width: 57px) {
+        .layout (
+            grid-template-coloumn: 1fr 3fr;
+            grid-template-area:
+            "a a "
+            "aside main"
+            "footer footer"
+
+        )
+        nav (
+            display: none;
+        )
+
+    }
+       @media (min-width: 577px) and (max-width:760px) {
+            .;ayout (
+                grind-template-area: 
+                "a a a"
+                "nav main aside"
+                "footer footer footer"
+            )
+            nav (
+                background-color: red;
+            )
+            aside (
+                background-color: green;
+            )
+
+        }
